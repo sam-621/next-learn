@@ -127,6 +127,8 @@ export async function fetchFilteredInvoices(query: string, currentPage: number) 
 }
 
 export async function fetchInvoicesPages(query: string) {
+  await new Promise((resolve) => setTimeout(resolve, 3000))
+
   try {
     const count = await sql`SELECT COUNT(*)
     FROM invoices
